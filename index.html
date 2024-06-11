@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    @charset "UTF-8";
+
+    @font-face {
+        font-family: 'Android';
+        src: url('../fontes/idroid.otf') format(opentype);
+        font-weight: normal;
+    }
+
+
+    :root {
+        --cor0: #c5ebd3;
+        --cor1: #83e1ad;
+        --cor2: #3ddc84;
+        --cor3: #2fa866;
+        --cor4: #1a5c37;
+        --cor5: #063d1e;
+
+        --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+        --fonte-destaque: 'Bebas Neue', cursive;
+        --fonte-android: 'Android', cursive;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: var(--cor0);
+        font-family: var(--fonte-padrao);
+    }
+
+    a.externo::after {
+        content: '\00A0\1F517';
+
+    }
+
+    header {
+        background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+        padding: 40px;
+        text-align: center;
+        min-height: 150px;
+        margin: auto;
+        padding: 1rem;
+        background: url("https://cdn.britannica.com/27/95027-050-C0B1A761/view-Machu-Picchu-Peru.jpg");
+        /*Adição de imagem no cabeçalho*/
+        background-repeat: no-repeat;
+        /*Não repetir a imagem*/
+        background-position: center;
+        /*centralizando a imagem*/
+    }
+
+    header>h1 {
+        color: white;
+        font-family: var(--fonte-destaque);
+        margin-bottom: 20px;
+        font-size: 3em;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.603);
+    }
+
+    header>p {
+        color: white;
+        max-width: 500px;
+        margin: auto;
+        font-family: var(--fonte-padrao);
+        font-size: 1.2em;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.800);
+        background: var(--cor5);
+        /*Adicionando um fondo ao paragráfo do cabeçalho*/
+        padding: 14px;
+        /*Adição preenchimento interno ao paragráfo*/
+        border-radius: 40px;
+        /*Arredondando as bordas do preenchimento*/
+    }
+
+    nav {
+        background-color: var(--cor5);
+        padding: 10px;
+        color: white;
+        min-width: 300px;
+        margin: auto;
+        box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.607);
+        border-bottom-right-radius: 15px;
+        /*arredondamento do lado direito inferior do nav*/
+        border-bottom-left-radius: 15px;
+        /*arredondamento do lado esquerdo inferior do nav*/
+        text-align: center;
+        /*centralizando o texto do nav*/
+    }
+
+    nav>a {
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition-duration: 0.3s;
+        /*mudando o tempo de transição*/
+        text-align: center;
+    }
+
+    nav>a:hover {
+        background-color: var(--cor0);
+        color: var(--cor5);
+    }
+
+    main {
+        background-color: white;
+        min-width: 300px;
+        max-width: 1000px;
+        margin: auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.569);
+        margin-bottom: 30px;
+    }
+
+    main img {
+        width: 100%;
+    }
+
+    main img.pequena {
+        width: 350px;
+        display: block;
+        margin: auto;
+    }
+
+    main h1 {
+        color: var(--cor5);
+        font-family: var(--fonte-android);
+
+    }
+
+    main h2 {
+        font-family: var(--fonte-android);
+    }
+
+    main p {
+        margin: 15px 0px;
+        text-align: justify;
+        text-indent: 30px;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    main strong {
+        color: var(--cor4);
+        font-weight: bold;
+    }
+
+    hr {
+        margin-top: 30px;
+        /*Adicionadno margin superior de 30px */
+        margin-bottom: 30px;
+        /*Adicionadno margin inferior de 30px */
+        color: var(--cor4);
+    }
+
+    aside {
+        background-color: var(--cor0);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    div.video {
+        background-color: var(--cor5);
+        margin: 0px -20px 30px -20px;
+        padding: 20px;
+        padding-bottom: 57%;
+        position: relative;
+    }
+
+    div.video>iframe {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+    }
+
+    aside>h3 {
+        background-color: var(--cor3);
+        color: white;
+        padding: 10px;
+        margin: -10px -10px 0px -10px;
+        border-radius: 10px 10px 0px 0px;
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.609);
+    }
+
+    a {
+        text-decoration: none;
+        /* removendo o sublinhado do link */
+        color: var(--cor4);
+    }
+
+    ol li,
+    ul li {
+        margin-left: 40px;
+        /*Ajustando o espaçamento dos itens da lista */
+
+    }
+
+    .container {
+        display: flex;
+        /* Define o container como flexbox */
+        justify-content: center;
+        /* Centraliza o conteúdo do container */
+    }
+
+    ul {
+        padding: 0;
+        /* Remove o padding padrão do ul */
+        margin: 0;
+        /* Remove a margem padrão do ul */
+        display: flex;
+        /* Define o ul como flexbox */
+        justify-content: center;
+        /* Centraliza os itens do ul horizontalmente */
+        flex-wrap: wrap;
+        /* Permite que os itens quebrem para a próxima linha se necessário */
+    }
+
+    ul li {
+        display: flex;
+        /* Define os li como flexbox */
+        flex-direction: column;
+        /* Alinha os filhos dos li em coluna */
+        align-items: center;
+        /* Centraliza os filhos dos li horizontalmente */
+        margin: 10px;
+        /* Espaçamento entre os itens da lista */
+    }
+
+    ul li img {
+        margin: 10px 0;
+        /* Adiciona margem acima e abaixo da imagem */
+        width: 400px;
+        /* Define a largura da imagem */
+        height: 300px;
+        /* Define a altura da imagem */
+    }
+
+    .localizacao {
+        display: flex;
+        /* Define o container como flexbox */
+        justify-content: center;
+        /* Centraliza o conteúdo horizontalmente */
+        align-items: center;
+        /* Centraliza o conteúdo verticalmente */
+        height: 100vh;
+        /* Define a altura do container para preencher a altura da viewport */
+        background-color: var(--cor5);
+        margin: 0px -20px 30px -20px;
+    }
+
+    iframe {
+        border: none;
+        /* Remove a borda do iframe, opcional */
+    }
+
+    .botao {
+        display: flex;
+        /* Define o container como flexbox */
+        justify-content: center;
+        /* alinhando o botão ao centro */
+        margin-top: 20px;
+        /* espaçamento com o item acima */
+    }
+
+    button {
+        padding: 10px;
+        /*preenchimento do botão */
+        border-radius: 10px;
+        /*arredondamento das bordas */
+        background-color: #1a5c37;
+        /* cor de fundo */
+        font-weight: bold;
+        /* peso da fonte para bold */
+        cursor: pointer;
+        /* quando o mouse passa por cima muda o cursos para ponteiro (mão ) */
+    }
+
+    button a {
+        color: white;
+        /*Cor do texto */
+    }
+
+    footer {
+        background-color: var(--cor5);
+        color: white;
+        text-align: center;
+        font-size: 0.8em;
+        padding: 5px;
+    }
+
+    footer>a {
+        color: white;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        background-color: rgb(214, 251, 214);
+        color: var(--cor5);
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Machu Picchu e o Vale Sagrado dos Incas</h1>
+        <p>Descubra as maravilhas deste passeio, Machu Picchu e o <br> Vale Sagrado dos Incas</p>
+    </header>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#viagem">A viagem</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#contato">Fale conosco</a>
+    </nav>
+    <main>
+        <article id="viagem">
+            <h1>Meu sonho de viagem</h1>
+
+            <p>Destino perfeito para aventureiros e apaixonados por história e natureza, Machu Picchu proporcionar
+                viagens
+                inesquecíveis para ter contato com a cultura inca, em meio a templos, vales e o visual de tirar o fôlego
+                das montanhas
+                que ficam a cerca de dois metros acima do nível do mar. Aproveite para unir à viagem uma visita à
+                capital peruana Lima e
+                aos povoados <strong>Ollantaytambo, Águas Calientes, Urubamba, Pisac</strong> e <strong>Yucay</strong>.
+            </p>
+
+
+            <p>Um dos passeios imperdíveis da região é o tour de trem que percorre rios e vales no entorno do sítio
+                arqueológico de
+                Machu Picchu, assim como a visita ao centro histórico de Cusco, no Peru, e aos restaurantes e ao mercado
+                de artesanato
+                da região do Valle Sagrado e Águas Calientes. Essas e muitas outras aventuras estão garantidas nos
+                pacotes de viagem para
+                Machu Picchu. Se preferir, compre passagens aéreas ou reserve seu hotel com a agência de turismo Meu
+                Sonho de Viagem.</p>
+
+            <picture>
+                <source media="(max-width: 670px)">
+                <img src="images/MachuPicchu1.png" alt="Machu Picchu">
+            </picture>
+
+            <p>Sem esquecer de reservar um tempo para conhecer o Vale Sagrado dos Incas: ruínas, sítios arqueológicos e
+                curiosidades.</p>
+
+            <p>O <strong>“turismo inca” </strong>é responsável por atrair milhares de visitantes ao Peru vindos dos
+                cantos mais distantes do mundo.
+                E para entender a história dessa civilização, é preciso ir além da cidade sagrada de Machu Picchu.</p>
+
+            <picture>
+                <source media="(max-width: 670px)">
+                <img src="images/MachuPicchu2.jpg" alt="Machu Picchu">
+            </picture>
+
+            <p>Foi no Vale Sagrado que o Império Inca se desenvolveu, muito em função das terras férteis que se
+                estendiam próximas
+                às montanhas e rios.</p>
+
+            <p>Rastros de suas presenças seguem preservados nas ruínas de templos e antigas cidades, formando ricos
+                sítios
+                arqueológicos como os de Pisac e Ollantaytambo.</p>
+
+            <p>Confira nossas dicas sobre o destino e veja também nossos ótimos <strong><a href="#">preços</a></strong>.
+                Boa viagem!</p>
+
+            <div class="video"><iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/Q_yxQFgkPEk?si=CKDlrcd_JuYYFDv9" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <hr> <!--Adcionando uma linha para separar o conteúdo -->
+
+            <h1 id="curiosidades">Curiosidades Machu Picchu!</h1>
+            <p><strong>8 curiosidades sobre Machu Picchu, a cidade perdida dos Incas!</strong></p>
+
+            <ol>
+                <li>
+                    <p>Ficou esquecida no tempo</p>
+                </li>
+                <li>
+                    <p>Teve seus tesouros explorados</p>
+                </li>
+                <li>
+                    <p>Protegida por estratégia de guerra</p>
+                </li>
+                <li>
+                    <p>Foi descoberta por acaso</p>
+                </li>
+                <li>
+                    <p>Tudo foi bem planejado</p>
+                </li>
+                <li>
+                    <p>Não é tudo uma coisa só </p>
+                </li>
+                <li>
+                    <p>Um refúgio para o imperador</p>
+                </li>
+                <li>
+                    <p>Um importante centro religios</p>
+                </li>
+            </ol>
+
+            <h2>Locais de interesse na região do Vale Sagrado dos Incas</h2>
+
+            <div class="container">
+                <ul>
+                    <li>
+                        <p>Ollantaytambo</p>
+                        <img src="images/Ollantaytambo.jpg" alt="Ollantaytambo">
+                    </li>
+                    <li>
+                        <p>Águas Calientes</p>
+                        <img src="images/ÁguasCalientes.jpg" alt="Águas Calientes">
+                    </li>
+                    <li>
+                        <p>Urubamba</p>
+                        <img src="images/Urubamba.jpg" alt="Urubamba">
+                    </li>
+                    <li>
+                        <p>Pisac</p>
+                        <img src="images/Pisac.jpg" alt="Pisac">
+                    </li>
+                    <li>
+                        <p>Yucay</p>
+                        <img src="images/Yucay.jpg" alt="Yucay">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="localizacao">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1lhq54Y-NwqscLtMvZd2NAFzTT_WCG27W&ehbc=2E312F"
+                    width="640" height="480"></iframe>
+            </div>
+
+            <h3 id="contato">Para mais informações, preencha o formulário através do botão abaixo:</h3>
+
+            <div class="botao">
+                <button>
+                    <a href="google.com">Acesse o formulário</a>
+                </button>
+            </div>
+        </article>
+
+
+    </main>
+    <footer>
+        Desenvolvido por <a href="#">KELLY NAYARA SHRÖDER DE SOUZA </a>
+    </footer>
+</body>
+
+</html>
